@@ -1,0 +1,40 @@
+Ideal way to start a react app is using create-react-app with
+We can write the code even without using any package 
+but that would not be optimal
+crate-react-app sets up a basic react app
+while installing create-react-app we do not use npm but we use npx(use a package without downloading)
+npx-->use create react app once and then it is gone
+npm-->downloading create-react-app
+::::installing create-react-app::::::::::::::::
+npx create-react-app name_of_application
+and a folder will be created
+REACT is a library not a framework
+REACT app--> uses component architecture
+if you use npx create-react-app .
+then all the files wil open up instead of creating a folder
+WARN -- there might be some problem but works fine
+ 
+ your react components will be added in the src folder and in those components you will send props and components will have a state
+
+Props : e.g  there is a form and in the form i put name,age,.... then the form is a component then the details i put inside the form are the props, as i send this form with my props i.e details ke saath form ko bharunga to ye form mera form hoga.
+
+state : e.g there is this form(component) and and it has a heading . then the heading is part of the state .
+We will be mainly working in src 
+Do not touch the index.html in public. All the rendering will be done in this index.html and with the help of js we will popul ate the root div
+
+I src:
+-->App.js is a component
+-->index.js is our entry point:telling to render the app component and after rendering take its content to div....
+
+so whatever changes we make in App.js, with the help of index.js it will all go to the root div
+
+to start the react app - - > npm start
+for production  - - > npm run build
+
+All components are in src
+
+components in react are : 
+1)Function based components
+2)Class based components
+
+first create-react-app used to ue class based components, now it uses function based components.
