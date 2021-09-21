@@ -1,6 +1,7 @@
 import React, { useState } from 'react'  //useState hook helps to make a state variable
 
 export default function TextForm(props) {
+    
     //event handler
     const handleUpClick = ()=>{
         let newText = text.toUpperCase();
@@ -22,6 +23,17 @@ export default function TextForm(props) {
     const [text, setText] = useState('');
     // text = "new text"; //wrong way to change the state
     // setText("new text");  //correct way
+    const handleCopy = ()=>{
+        console.log("I am copy");
+        var text = document.getElementById("myBox");
+        console.log(text)
+        text.select();
+        navigator.clipboard.writeText(text.value);
+    }
+
+   
+    console.log(text);
+
     return (
         <>
         <div className="container">
@@ -33,6 +45,7 @@ export default function TextForm(props) {
             <button className="btn btn-primary mx-2" onClick={handleUpClick}>Convert to Uppercase</button>
             <button className="btn btn-primary mx-2" onClick={handleLoClick}>Convert to Lowercase</button>
             <button className="btn btn-primary mx-2" onClick={handleClearClick}>Clear</button>
+            <button className="btn btn-primary mx-2" onClick={handleCopy}>Copy Text</button>
         </div>
         <div className="container my-3">
             <h2>Your text summary</h2>
