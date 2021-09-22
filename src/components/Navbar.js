@@ -1,7 +1,6 @@
 //This is a react function based component(rfc)
 //props --> properties ( read only in the component )
 //Components file name --> Capital
-
 import React from 'react'  
 
 import PropTypes from 'prop-types' 
