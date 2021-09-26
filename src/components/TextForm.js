@@ -1,7 +1,7 @@
 import React, { useState } from 'react'  //useState hook helps to make a state variable
 
 export default function TextForm(props) {
-    
+
     //event handler
     const handleUpClick = ()=>{
         let newText = text.toUpperCase();
