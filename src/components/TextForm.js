@@ -6,25 +6,29 @@ export default function TextForm(props) {
     const handleUpClick = ()=>{
         let newText = text.toUpperCase();
         setText(newText);
+        props.showAlert('Converted to UpperCase','success');
     }
     const handleLoClick = ()=>{
         let newText = text.toLowerCase();
         setText(newText);
+        props.showAlert('Converted to LowerCase','success');
     }
     const handleClearClick = ()=>{
         let newText ='';
         setText(newText);
+        props.showAlert('Text cleared','success');
     }
     //updating the text as soon as someone types in the textarea 
     const handleOnChange = (event)=>{
         setText(event.target.value);
     }
-   //copy the text in the textarea
+    //copy the text in the textarea
     const handleCopy = ()=>{
         var text = document.getElementById("myBox");
         console.log(text)
         text.select();
         navigator.clipboard.writeText(text.value);
+        props.showAlert('Text Copied','success');
     }
     //removing extra spaces
     const handleExtraSpaces = ()=>{
@@ -32,6 +36,7 @@ export default function TextForm(props) {
         let newText = text.split(/[ ]+/);
         //then join with one space character
         setText(newText.join(" "));
+        props.showAlert('Extra spaces removed','success');
     }
 
      //text --> state variable
