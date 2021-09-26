@@ -5,6 +5,7 @@ import TextForm from './components/TextForm.js';
 import About from './components/About.js';
 import Alert from './components/Alert';
 function App() {
+
   const [mode, setMode] = useState('light'); //whether dark mode is enabled or not
   const [alert, setAlert] = useState(null); //alert is an object
 
@@ -23,10 +24,12 @@ function App() {
       setMode('dark');
       document.body.style.backgroundColor = '#373737';
       showAlert("Dark mode has been enabled","success");
+      document.title = 'TextUtils - Dark Mode';
     } else {
       setMode('light');
       document.body.style.backgroundColor = 'white';
       showAlert("Light mode has been enabled","success");
+      document.title = 'TextUtils - Light Mode';
     }
   }
 
