@@ -38,3 +38,21 @@ components in react are :
 2)Class based components
 
 first create-react-app used to ue class based components, now it uses function based components.
+
+TextForm::::::::::::::::
+
+// useState hook required from react
+//useState is a hook --> use state and other React components without writing class (for function based components)--> helps use features of a class without making a class
+
+
+//text is a variable and whenever I will update text it will be through the setText function
+// Enter text here is the default value of text
+//wherever I will use text and whenever I will update it, it will  get updated at all those places(without reloading the page)
+//array destructuring 
+//useState will return an array 
+//cant update state like a normal variable, have to use updation function for ir
+//text set(state) to --> first parameter of the returned array
+//setText(updation function) set to --> second parameter of the returned array
+
+
+/react does not watch all the  variables by default, it only watches the state variables

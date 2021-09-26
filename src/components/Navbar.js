@@ -1,9 +1,9 @@
 //This is a react function based component(rfc)
 //props --> properties ( read only in the component )
 //Components file name --> Capital
-import React from 'react'  
+import React from 'react'
 
-import PropTypes from 'prop-types' 
+import PropTypes from 'prop-types'
 //impt
 
 //rfc --> React function based component
@@ -23,12 +23,15 @@ export default function Navbar(props) {
                         <li className="nav-item">
                             <a className="nav-link" href="/">{props.aboutText}</a>
                         </li>
-
                     </ul>
-                    <form className="d-flex">
+                    {/* <form className="d-flex">
                         <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
                         <button className="btn btn-primary" type="submit">Search</button>
-                    </form>
+                    </form> */}
+                    <div className={`form-check form-switch text-${props.mode === 'light'?'dark':'light'}`}>
+                        <input className="form-check-input" type="checkbox" id="flexSwitchCheckDefault" onClick={props.toggleMode} />
+                        <label className ="form-check-label" for="flexSwitchCheckDefault">Enable Dark Mode</label>
+                    </div>
                 </div>
             </div>
         </nav>
@@ -44,7 +47,7 @@ Navbar.propTypes = {
 
 //default props-->if i do not pass values to the props then use these as the default values
 Navbar.defaultProps = {
-    title:'Set your title here',
-    aboutText : 'About text here',
+    title: 'Set your title here',
+    aboutText: 'About text here',
 }
 
