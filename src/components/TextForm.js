@@ -24,10 +24,7 @@ export default function TextForm(props) {
     }
     //copy the text in the textarea
     const handleCopy = ()=>{
-        var text = document.getElementById("myBox");
-        console.log(text)
-        text.select();
-        navigator.clipboard.writeText(text.value);
+        navigator.clipboard.writeText(text);
         props.showAlert('Text Copied','success');
     }
     //removing extra spaces
@@ -64,8 +61,8 @@ export default function TextForm(props) {
             <h2>Your text summary</h2>
             {/* text.split --> splits characters with space */}
             {console.log(text.split(" "))}
-            <p>{text.split(" ").filter((element)=>{return element.length!==0}).length} words and {text.length} characters</p>
-            <p>{0.008 * text.split(" ").filter((element)=>{return element.length!==0}).length} Minutes read</p>
+            <p>{text.split(/\s+/).filter((element)=>{return element.length!==0}).length} words and {text.length} characters</p>
+            <p>{0.008 * text.split(/\s+/).filter((element)=>{return element.length!==0}).length} Minutes read</p>
             <h2>Preview</h2>
             <p>{text.length > 0 ? text : 'Enter text to preview here'}</p>
         </div>
