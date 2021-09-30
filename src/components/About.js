@@ -1,31 +1,16 @@
 import React, { useState } from 'react'
-export default function About() {
+export default function About(props) {
 
-    const [myStyle, setMyStyle] = useState({
-        color: 'black',
-        backgroundColor: 'white',
-        border: '1px solid black',
-    });
-
-    const [btnText, setBtnText] = useState("Enable Dark Mode");
-    const toggleStyle = () => {
-        if (myStyle.color === 'black') {
-            setMyStyle({
-                color: 'white',
-                backgroundColor: 'black',
-                border: '1px solid white',
-            });
-            setBtnText("Enable Light Mode");
-        }
-        else {
-            setMyStyle({
-                color: 'black',
-                backgroundColor: 'white',
-                border: '1px solid black',
-            });
-            setBtnText("Enable Dark Mode");
-        }
+    // const [myStyle, setMyStyle] = useState({
+    //     color: 'black',
+    //     backgroundColor: 'white',
+    //     border: '1px solid black',
+    // });
+    let myStyle = {
+        color:props.mode === 'dark'?'white':'black',
+        backgroundColor: props.mode === 'dark'? 'black':'white',
     }
+    
     return (  
 
         <div className="container" style={myStyle}>
@@ -67,9 +52,6 @@ export default function About() {
                         </div>
                     </div>
                 </div>
-            </div>
-            <div className="container my-3 ">
-                <button onClick={toggleStyle} type="button" className="btn btn-primary">{btnText}</button>
             </div>
         </div>
     )
